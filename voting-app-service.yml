@@ -4,7 +4,7 @@ kind: Service
 metadata:
   name: voting-app-service
   labels:
-    author:
+    author: mahender
 spec:
   type: LoadBalancer
   ports:

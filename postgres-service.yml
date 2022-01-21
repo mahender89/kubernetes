@@ -7,8 +7,8 @@ metadata:
     author: mahender
 spec:
   ports:
-    targetPort: 5432
-    port: 5432
+    - targetPort: 5432
+      port: 5432
   selector:
     name: postgres
     author: mahender
