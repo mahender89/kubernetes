@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql-pod
+  labels:
+    author: mahender
+    type: db
+spec:
+  containers:
+    - name: mydb
+      image: mysql:5
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: mahender
+
+      volumeMounts:
+        - name: mysql-volume
+          mountPath: /var/lib/mysql
+  volumes:
+    - name: mysql-volume
+      emptyDir: {}
+...

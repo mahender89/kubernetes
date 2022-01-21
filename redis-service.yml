@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-service
+  labels:
+    author: mahender
+spec:
+  ports:
+    - targetPort: 6372
+      port: 6372
+  selector:
+     author: mahender
+     name: redis
+...
+
