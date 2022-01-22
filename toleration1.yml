@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpd-pod
+  labels:
+    name: webserver
+    author: mahender
+spec:
+  containers:
+    - name: myhttpd
+      image: httpd
+  tolerations:
+    - key: Slave1
+      operator: Equal
+      value: mahender1
+      effect: NoSchedule
+...
