@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ghost-app
+  labels:
+    type: cms
+    author: mahender
+spec:
+  selector:
+    matchLabels:
+      type: cms
+  template:
+    metadata:
+      name: ghost-pod
+      labels:
+        type: cms
+    spec:
+      containers:
+        - name: ghost
+          image: ghost
+          ports:
+            - containerPort: 2368
+              hostPort: 8080
+...
