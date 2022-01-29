@@ -1,0 +1,10 @@
+---
+wodpressUsername: admin
+wordpressPassword: admin
+wordpressEmail: mahender.penthala@gmail.com
+wordpressFirstName: mahi
+wordpressLastName: reddy
+wordpressBlogName: mywordpress.com
+services:
+  type: LoadBalancer
+...

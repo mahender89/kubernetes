@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-apache
+  labels:
+    type: php
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      type: php
+  template:
+    metadata:
+      name: php-pod
+      labels:
+        type: php
+    spec:
+      containers:
+        - name: myphp
+          image:
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            cpu: "500m"
+          requests:
+            cpu: "200m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-apache
+  labels:
+    author:
+spec:
+  ports:
+    - port: 80
+  selector:
+    type: php
+...
